@@ -12,5 +12,11 @@
   <body>
     <%= yield %>
     <br><br><%= link_to "Sign up" ,signup_path %>
+    <%= link_to "Log in", login_path %>
+    <%= link_to "Sign out", signout_path, method: :delete %><br>
+    <% if logged_in? %>
+      <%= current_user.id %>
+      <%= current_user.name %>
+    <% end %>
   </body>
 </html>
