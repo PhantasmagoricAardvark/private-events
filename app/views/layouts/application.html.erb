@@ -10,11 +10,16 @@
   </head>
 
   <body>
+    <%= flash.each do |f| %>
+      <% f %>
+    <% end %>
     <%= yield %>
     <br><br><%= link_to "Sign up" ,signup_path %>
     <%= link_to "Log in", login_path %>
-    <%= link_to "Sign out", signout_path, method: :delete %><br>
+    <%= link_to "New event", new_event_path %><br><br>
+    <%= link_to "Sign out", signout_path, method: :delete %><br><br>
     <% if logged_in? %>
+      <p>Logged in user:</p>
       <%= current_user.id %>
       <%= current_user.name %>
     <% end %>
