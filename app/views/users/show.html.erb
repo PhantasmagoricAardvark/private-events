@@ -5,8 +5,32 @@
 	Name: <%= @user.name %>
 </p>
 
-<h2>Events</h2>
-<% @user.events.each do |f| %>
-	<%= f.description %>
-	<%= f.date %><br>
-<% end %>
+<h2>Events Created</h2>
+<p>
+	<% @user.events.each do |f| %>
+		<%= f.description %>
+		<%= f.date %><br>
+	<% end %>
+</p>	
+
+<h2>Events Attending</h2>
+<p>
+	<% @user.attended_events.each do |f| %>
+		<%= f.date %>
+		<%= f.description %><br>
+	<% end %>
+</p>
+
+<h2>Upcoming Events</h2>
+<p>
+	<% @upcoming_events.each do |f| %>
+		<%= f.description %><br>	
+	<% end %>	
+</p>
+
+<h2>Past Events</h2>
+<p>
+	<% @previous_events.each do |f| %>
+		<%= f.description %><br>	
+	<% end %>	
+</p>

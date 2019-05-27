@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete 	'/signout', 		to: 'sessions#destroy'
   get 		'/signup', 			to: 'users#new'
   post 		'/signup', 			to: 'users#create'
+  get			'/all_users',		to: 'users#index'
 
   resources :users, 	only: [:show,:create,:new]
   resources :events, 	only: [:show,:create,:new]

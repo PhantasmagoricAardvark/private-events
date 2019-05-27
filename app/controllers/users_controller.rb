@@ -12,6 +12,12 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @upcoming_events = @user.upcoming_events
+    @previous_events = @user.previous_events
+  end
+
+  def index
+    @users = User.all
   end
 
   private

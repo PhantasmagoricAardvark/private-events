@@ -1,0 +1,8 @@
+<h1>Users Index</h1>
+
+<p>
+	<% @users.each do |f| %>
+		<%= f.name %>
+		<%= link_to "#{@users.index(f) + 1}", f %><br>
+	<% end %>
+</p>	

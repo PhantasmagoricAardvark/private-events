@@ -2,6 +2,22 @@
 <p>
 	<% @events.each do |f| %>
 		<%= f.description %>
-		<%= f.date %><br>
+		<%= f.date %>
+		<%= link_to "#{@events.index(f) + 1}", f %><br>
+		
 	<% end %>
 </p>
+
+<h2>Upcoming Events</h2>
+
+<% @past_events.each do |f| %>
+		<%= f.description %>
+		<%= f.date %>		
+<% end %>
+
+<h2>Past Events</h2>
+
+<% @past_events.each do |f| %>
+		<%= f.description %>
+		<%= f.date %>		
+<% end %>
