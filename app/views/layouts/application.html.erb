@@ -13,13 +13,17 @@
     <%= flash.each do |f| %>
       <% f %>
     <% end %>
+    <div class="nav">      
+      <%= link_to "Sign up" ,signup_path %>
+      <%= link_to "Log in", login_path %>
+      <%= link_to "New event", new_event_path %>
+      <%= link_to "Users", all_users_path %>
+      <%= link_to "Events", all_events_path %>
+      <%= link_to "Sign out", signout_path, method: :delete %>
+    </div>
     <%= yield %>
-    <br><br><%= link_to "Sign up" ,signup_path %>
-    <%= link_to "Log in", login_path %>
-    <%= link_to "New event", new_event_path %>
-    <%= link_to "Users", all_users_path %>
-    <%= link_to "Events", all_events_path %><br><br>
-    <%= link_to "Sign out", signout_path, method: :delete %><br><br>  
+    <br><br>
+    
     <% if logged_in? %>
       <p>Logged in user:</p>
       <%= current_user.id %>

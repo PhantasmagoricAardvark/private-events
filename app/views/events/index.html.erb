@@ -10,14 +10,14 @@
 
 <h2>Upcoming Events</h2>
 
-<% @past_events.each do |f| %>
+<% @upcoming_events.each do |f| %>
 		<%= f.description %>
-		<%= f.date %>		
+		<%= f.date %><br>		
 <% end %>
 
 <h2>Past Events</h2>
 
 <% @past_events.each do |f| %>
 		<%= f.description %>
-		<%= f.date %>		
+		<%= f.date %><br>	
 <% end %>
